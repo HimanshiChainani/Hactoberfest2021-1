@@ -1,0 +1,53 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+class SimpleCalculator{
+    int a, b;
+    public:
+    void getDataSimple(){
+        cout<<"enter the value of a"<<endl;
+        cin>>a;
+        cout<<"enter the value of b"<<endl;
+        cin>>b;
+    }
+    void peformOperationsSimple(){
+        cout<<"the value of a + b is : "<<a+b<<endl;
+        cout<<"the value of a - b is : "<<a-b<<endl;
+        cout<<"the value of a * b is : "<<a*b<<endl;
+        cout<<"the value of a / b is : "<<a/b<<endl;
+    }
+};
+class ScientificCalculator{
+    int a, b;
+    public:
+    void getDataScientific(){
+        cout<<"enter the value of a"<<endl;
+        cin>>a;
+        cout<<"enter the value of b"<<endl;
+        cin>>b;
+    }
+    void peformOperationsScientific(){
+        cout<<"the value of cos(a) is : "<<cos(a)<<endl;
+        cout<<"the value of sin(a) is : "<<sin(a)<<endl;
+        cout<<"the value of epx(a) is : "<<exp(a)<<endl;
+        cout<<"the value of tan(a) is : "<<tan(a)<<endl;
+    }
+};
+
+class HybridCalculator: public SimpleCalculator, public ScientificCalculator{
+
+};
+
+int main(){
+    // SimpleCalculator calc;
+    // ScientificCalculator calc;
+    // calc.getData();
+    // calc.prformOperations();
+    HybridCalculator calc;
+    calc.getDataScientific();
+    calc.peformOperationsScientific();
+    calc.getDataSimple();
+    calc.peformOperationsSimple();
+    return 0;
+}
